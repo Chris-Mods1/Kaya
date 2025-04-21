@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Contact - taka Tech</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: linear-gradient(-45deg, #0f2027, #203a43, #2c5364, #1e3c72);
+      background-size: 400% 400%;
+      animation: gradientBG 15s ease infinite;
+      font-family: 'Poppins', sans-serif;
+      color: white;
+      margin: 0;
+      padding: 60px 20px;
+    }
+
+    @keyframes gradientBG {
+      0% {background-position: 0% 50%;}
+      50% {background-position: 100% 50%;}
+      100% {background-position: 0% 50%;}
+    }
+
+    .container {
+      max-width: 800px;
+      margin: auto;
+      background: rgba(255,255,255,0.05);
+      padding: 40px 30px;
+      border-radius: 20px;
+      box-shadow: 0 0 25px rgba(0,255,255,0.1);
+      border: 1px solid rgba(0,255,255,0.2);
+      backdrop-filter: blur(8px);
+      animation: fadeInUp 1s ease-out forwards;
+      transform: translateY(30px);
+      opacity: 0;
+    }
+
+    @keyframes fadeInUp {
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    h1 {
+      color: #00f2fe;
+      text-align: center;
+      margin-bottom: 30px;
+      font-size: 36px;
+      text-shadow: 0 0 10px rgba(0,255,255,0.4);
+    }
+
+    p {
+      line-height: 1.7;
+      color: #ccc;
+      text-align: center;
+    }
+
+    .contact-options {
+      margin-top: 30px;
+      text-align: center;
+    }
+
+    .contact-options a {
+      display: inline-block;
+      margin: 15px;
+      padding: 12px 22px;
+      border-radius: 10px;
+      font-weight: bold;
+      text-decoration: none;
+      transition: 0.3s ease-in-out;
+    }
+
+    .telegram-link {
+      background: linear-gradient(to right, #00ffe7, #43e97b);
+      color: black;
+    }
+
+    .whatsapp-link {
+      background: linear-gradient(to right, #25D366, #128C7E);
+      color: white;
+    }
+
+    .email-link {
+      background: linear-gradient(to right, #00f2fe, #4facfe);
+      color: white;
+    }
+
+    .contact-options a:hover {
+      transform: scale(1.08);
+      box-shadow: 0 0 20px rgba(0,255,255,0.2);
+    }
+
+    footer {
+      text-align: center;
+      font-size: 14px;
+      color: #aaa;
+      margin-top: 50px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>Contactez-nous</h1>
+    <p>Une question, une suggestion ou une demande de partenariat ? N’hésitez pas à nous écrire ou nous rejoindre :</p>
+
+    <div class="contact-options">
+      <a class="email-link" href="Harveytaka1@gmail.com">Email : contact@taka.tech</a><br>
+      <a class="telegram-link" href="https://t.me/takamd" target="_blank">Canal Telegram</a>
+      <a class="whatsapp-link" href="https://wa.me/237690768603" target="_blank">Canal WhatsApp</a>
+    </div>
+
+    <p style="margin-top: 40px; font-size: 14px;">Réponse en moins de 24h en général.</p>
+  </div>
+
+  <footer>
+    &copy; 2025 taka Tech - Tous droits réservés.
+  </footer>
+
+</body>
+</html>

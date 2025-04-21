@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>taka home</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+  <style>  * {
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Poppins', sans-serif;
+      overflow-x: hidden;
+      color: white;
+      height: 100%;
+    }
+
+    body {
+      background: linear-gradient(-45deg, #0f2027, #203a43, #2c5364, #1e3c72);
+      background-size: 400% 400%;
+      animation: gradientBG 15s ease infinite;
+      position: relative;
+    }
+
+    @keyframes gradientBG {
+      0% {background-position: 0% 50%;}
+      50% {background-position: 100% 50%;}
+      100% {background-position: 0% 50%;}
+    }
+
+    body::before {
+      content: "taka";
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) rotate(-30deg);
+      font-size: 220px;
+      font-weight: 700;
+      color: rgba(255, 255, 255, 0.03);
+      z-index: 0;
+      pointer-events: none;
+      user-select: none;
+      white-space: nowrap;
+    }
+
+    header {
+      text-align: center;
+      padding: 60px 20px 30px;
+      background: rgba(0, 0, 0, 0.55);
+      border-radius: 30px;
+      margin: 40px auto;
+      max-width: 90%;
+      box-shadow: 0 0 30px rgba(0, 255, 255, 0.15);
+      position: relative;
+      z-index: 1;
+      border: 1px solid rgba(0,255,255,0.2);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+    }
+
+    header h1 {
+      font-size: 36px;
+      color: #00f2fe;
+      margin: 0;
+      text-shadow: 0 0 15px rgba(0, 255, 255, 0.5);
+      animation: pulseTitle 4s ease-in-out infinite;
+    }
+
+    @keyframes pulseTitle {
+      0%, 100% {
+        text-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
+      }
+      50% {
+        text-shadow: 0 0 40px rgba(0, 255, 255, 0.5);
+      }
+    }
+
+    header p {
+      font-size: 16px;
+      color: #ccc;
+      margin-top: 10px;
+    }
+
+    .back-btn {
+      display: inline-block;
+      margin: 0 auto 30px;
+      padding: 12px 24px;
+      background: linear-gradient(to right, #ff416c, #ff4b2b);
+      color: white;
+      text-decoration: none;
+      border-radius: 10px;
+      font-weight: bold;
+      text-align: center;
+      transition: all 0.3s ease-in-out;
+      box-shadow: 0 0 15px rgba(255, 75, 43, 0.4);
+    }
+
+    .back-btn:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 20px rgba(255, 75, 43, 0.6);
+    }
+
+    #fichier-container {
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+      padding: 40px 20px;
+      max-width: 1200px;
+      margin: auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    .category {
+      background: rgba(255, 255, 255, 0.05);
+      border: 2px solid rgba(0, 255, 255, 0.2);
+      border-radius: 20px;
+      box-shadow: 0 0 20px rgba(0, 255, 255, 0.1);
+      padding: 25px;
+      margin: 0 auto;
+      max-width: 1000px;
+      width: 100%;
+      text-align: center;
+      transition: all 0.3s ease-in-out;
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+    }
+
+    .category:hover {
+      box-shadow: 0 0 30px rgba(0, 255, 255, 0.2);
+      border-color: rgba(0, 255, 255, 0.3);
+    }
+
+    .category h2 {
+      font-size: 24px;
+      margin-bottom: 15px;
+      color: #00f2fe;
+      text-shadow: 0 0 5px rgba(0,255,255,0.3);
+      transition: 0.3s;
+    }
+
+    .category h2:hover {
+      text-shadow: 0 0 15px rgba(0, 255, 255, 0.6);
+      transform: scale(1.02);
+    }
+
+    .category ul {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+      padding: 0;
+      list-style: none;
+      margin: 0;
+    }
+
+    li {
+      background: rgba(255, 255, 255, 0.05);
+      padding: 20px;
+      border-radius: 16px;
+      border: 1px solid rgba(255,255,255,0.1);
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      gap: 15px;
+      transition: all 0.3s ease-in-out;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeIn 0.6s ease forwards;
+    }
+
+    li:hover {
+      background: rgba(255, 255, 255, 0.08);
+      transform: translateY(-5px);
+    }
+
+    li > div {
+      flex: 1;
+      text-align: left;
+    }
+
+    .download-btn {
+      background: linear-gradient(to right, #43e97b, #38f9d7);
+      color: black;
+      text-align: center;
+      padding: 10px 15px;
+      border-radius: 10px;
+      font-weight: bold;
+      transition: all 0.3s ease-in-out;
+      white-space: nowrap;
+    }
+
+    .download-btn:hover {
+      transform: scale(1.05);
+    }
+
+    @keyframes fadeIn {
+      0% {
+        opacity: 0;
+        transform: translateY(20px) scale(0.98);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+    }
+
+    .telegram {
+      text-align: center;
+      margin: 60px auto 40px;
+      max-width: 700px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 2px solid #00ffe7;
+      border-radius: 16px;
+      padding: 30px 20px;
+      box-shadow: 0 0 25px rgba(0, 255, 231, 0.3);
+      transition: all 0.3s ease-in-out;
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+    }
+
+    .telegram:hover {
+      box-shadow: 0 0 40px rgba(0, 255, 231, 0.4);
+    }
+
+    .telegram-title {
+      color: #00ffe7;
+      font-size: 26px;
+      margin-bottom: 15px;
+    }
+
+    .telegram-link, .whatsapp-link {
+      display: inline-block;
+      padding: 12px 22px;
+      border-radius: 10px;
+      font-weight: bold;
+      text-decoration: none;
+      margin: 10px;
+      transition: all 0.3s ease-in-out;
+    }
+
+    .telegram-link {
+      background: linear-gradient(to right, #00ffe7, #43e97b);
+      color: #000;
+    }
+
+    .whatsapp-link {
+      background: linear-gradient(to right, #25D366, #128C7E);
+      color: white;
+    }
+
+    .telegram-link:hover,
+    .whatsapp-link:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 15px rgba(255,255,255,0.3);
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      font-size: 14px;
+      color: #aaa;
+      margin-top: 60px;
+    }
+   
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1 style="font-size: 40px; background: linear-gradient(to right, #00f2fe, #4facfe); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
+      taka HOME
+    </h1>
+    <p>L’espace de téléchargement des fichiers</p>
+    <p style="margin-top: 5px; font-size: 14px; font-style: italic; color: #aaa;">
+      Bots WhatsApp, Telegram, Discord & autres fichiers exclusifs par taka.
+    </p>
+  </header>
+
+  <div style="text-align:center;">
+    <a href="index.html" class="back-btn">← Retour à l'accueil</a>
+  </div>
+
+  <div id="fichier-container">
+    <p style="text-align:center">Chargement des fichiers en cours...</p>
+  </div>
+
+  <div class="telegram">
+    <h2 class="telegram-title">Rejoins notre communauté</h2>
+    <a class="telegram-link" href="https://t.me/techtaka" target="_blank">Canal Telegram</a>
+    <a class="whatsapp-link" href="https://whatsapp.com/channel/0029VbA2c1L84Om2ePrKij1x" target="_blank">Canal WhatsApp</a>
+  </div>
+
+  <footer>
+    <a href="politique_confidentialite.html" style="color:#00f2fe;">Politique de confidentialité</a> |
+    Développé par <strong>͟͟͞͞➳᭄ᴋᴀʏᴀ🕷』</strong>
+  </footer>
+
+  <script>
+    const csvURL = "https://docs.google.com/spreadsheets/d/1SWkySH-ZGgsLxkH8aFlNzUUys3ZG3Sqrsknhs0tzvkY/export?format=csv";
+
+    fetch(csvURL)
+      .then(res => res.text())
+      .then(data => {
+        const lignes = data.split('\n').slice(1);
+        const fichiersParCategorie = {};
+    
+        lignes.forEach(ligne => {
+          const separateur = ligne.includes(';') ? ';' : ',';
+          const [nom, url, categorie, description] = ligne.split(separateur).map(cell => cell.trim());
+
+          if (nom && url && categorie) {
+            if (!fichiersParCategorie[categorie]) fichiersParCategorie[categorie] = [];
+            fichiersParCategorie[categorie].push({ nom, url, description });
+          }
+        });
+
+        const container = document.getElementById('fichier-container');
+        container.innerHTML = '';
+
+        for (const [categorie, fichiers] of Object.entries(fichiersParCategorie)) {
+          fichiers.sort((a, b) => a.nom.localeCompare(b.nom));
+
+          const section = document.createElement('div');
+          section.className = 'category';
+          section.innerHTML = `<h2>${categorie}</h2><ul></ul>`;
+
+          const ul = section.querySelector('ul');
+
+          fichiers.forEach(fichier => {
+            const li = document.createElement('li');
+            li.innerHTML = `
+              <div>
+                <strong>${fichier.nom}</strong><br>
+                <small style="color:#ccc">${fichier.description || ''}</small>
+              </div>
+              <a class="download-btn" href="https://taka-home.onrender.com/${fichier.url}" download>Télécharger</a>
+            `;
+            ul.appendChild(li);
+          });
+
+          container.appendChild(section);
+        }
+      })
+      .catch(err => {
+        console.error("Erreur de chargement :", err);
+        document.getElementById('fichier-container').innerHTML = "<p>Erreur de chargement des fichiers.</p>";
+      });
+  </script>
+
+</body>
+</html>

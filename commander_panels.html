@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Commander un Panel</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      color: #fff;
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      flex-direction: column;
+      padding-top: 40px;
+    }
+
+    .logo-taka {
+      font-size: 2.5rem;
+      font-weight: 700;
+      background: linear-gradient(to right, #1cb5e0, #000046);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      padding: 15px 30px;
+      border: 2px solid rgba(255, 255, 255, 0.2);
+      border-radius: 20px;
+      box-shadow: 0 0 25px rgba(28, 181, 224, 0.3);
+      text-align: center;
+      margin-bottom: 30px;
+      transition: transform 0.4s ease;
+    }
+
+    .logo-taka:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 35px rgba(28, 181, 224, 0.5);
+    }
+
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 10px;
+      text-align: center;
+      color: #fff;
+      text-shadow: 1px 1px 10px rgba(0, 0, 0, 0.7);
+    }
+
+    .section-top {
+      background: rgba(255, 255, 255, 0.07);
+      border: 2px solid rgba(255, 255, 255, 0.15);
+      border-radius: 20px;
+      padding: 30px;
+      max-width: 900px;
+      width: 95%;
+      margin-bottom: 20px;
+      box-shadow: 0 0 20px rgba(28, 181, 224, 0.2);
+      text-align: center;
+    }
+
+    .sous-titre {
+      font-size: 1.3rem;
+      margin-bottom: 30px;
+      color: #e0f7ff;
+      font-weight: 500;
+    }
+
+    .container {
+      background: rgba(255, 255, 255, 0.05);
+      padding: 40px;
+      border-radius: 20px;
+      max-width: 900px;
+      width: 95%;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+      backdrop-filter: blur(10px);
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      display: grid;
+      gap: 20px;
+    }
+
+    li {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 18px;
+      border-radius: 12px;
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.3s ease-in-out;
+    }
+
+    li:hover {
+      background: rgba(255, 255, 255, 0.2);
+      transform: scale(1.03);
+    }
+
+    .panel-name {
+      font-weight: 600;
+      font-size: 1.2rem;
+      margin-bottom: 10px;
+      display: block;
+    }
+
+    .panel-link-texte {
+      font-size: 0.9rem;
+      background: #fff;
+      color: #000;
+      padding: 8px 14px;
+      border-radius: 10px;
+      word-break: break-word;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .panel-link-texte:hover {
+      background: #f0f0f0;
+      color: #203a43;
+    }
+
+    .btn-show {
+      display: block;
+      margin: 40px auto 20px;
+      padding: 14px 28px;
+      background: #ffffff;
+      color: #203a43;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      font-weight: bold;
+      font-size: 1.1rem;
+      transition: all 0.3s ease;
+    }
+
+    .btn-show:hover {
+      background: #1cb5e0;
+      color: #fff;
+    }
+
+    .panel-gratuit {
+      margin-top: 30px;
+      padding: 20px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 12px;
+    }
+
+    .footer-taka {
+      margin-top: 40px;
+      padding: 15px 30px;
+      border: 2px solid rgba(255, 255, 255, 0.3);
+      border-radius: 15px;
+      background: rgba(255, 255, 255, 0.05);
+      box-shadow: 0 0 15px rgba(28, 181, 224, 0.3);
+      text-align: center;
+      font-size: 1rem;
+      color: #ccc;
+      max-width: 400px;
+      margin-left: auto;
+      margin-right: auto;
+      animation: fadeIn 1.5s ease-in-out;
+    }
+
+    .footer-taka span {
+      font-weight: bold;
+      color: #1cb5e0;
+      text-shadow: 0 0 5px #1cb5e0;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 2rem;
+      }
+
+      .btn-show {
+        padding: 12px 22px;
+        font-size: 1rem;
+      }
+
+      .panel-link-texte {
+        font-size: 0.8rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="logo-taka">taka Tech</div>
+
+  <div class="section-top">
+    <h1>Commandes de Panels</h1>
+    <div class="sous-titre">Sélectionnez votre choix</div>
+  </div>
+
+  <div class="container">
+    <ul>
+      <li onclick="goToForm('Panel 2 Go - Basique')">Panel 2 Go - Basique</li>
+      <li onclick="goToForm('Panel 4 Go - Standard')">Panel 4 Go - Standard</li>
+      <li onclick="goToForm('Panel 6 Go - Avancé')">Panel 6 Go - Avancé</li>
+      <li onclick="goToForm('Panel 10 Go - Pro')">Panel 10 Go - Pro</li>
+      <li onclick="goToForm('Panel Illimité - Ultimate')">Panel Illimité - Ultimate</li>
+    </ul>
+
+    <button class="btn-show" onclick="loadFreePanels()">Voir les Panels Gratuits</button>
+    <ul id="free-panels" class="panel-gratuit"></ul>
+  </div>
+
+  <footer class="footer-taka">
+    <p>Développé avec passion par <span>taka</span></p>
+  </footer>
+
+  <script>
+    function goToForm(panel) {
+      window.location.href = `commande_panel.html?panel=${encodeURIComponent(panel)}`;
+    }
+
+    function loadFreePanels() {
+      fetch('https://docs.google.com/spreadsheets/d/1vDlBhuq5skBpqMvYdrSgkRedprlQGtgk5O-FY37Biko/gviz/tq?tqx=out:csv')
+        .then(response => response.text())
+        .then(data => {
+          const rows = data.split("\n").slice(1);
+          const list = document.getElementById("free-panels");
+          list.innerHTML = "";
+
+          rows.forEach(row => {
+            const [nom, lien] = row.split(",");
+            if (nom && lien) {
+              const trimmedLink = lien.trim();
+              const li = document.createElement("li");
+              li.innerHTML = `
+                <span class="panel-name">${nom.trim()}</span>
+                <div class="panel-link-texte" onclick="copyToClipboard('${trimmedLink}')">${trimmedLink}</div>
+              `;
+              list.appendChild(li);
+            }
+          });
+        })
+        .catch(error => {
+          alert("Erreur lors du chargement des panels gratuits.");
+          console.error(error);
+        });
+    }
+
+    function copyToClipboard(text) {
+      navigator.clipboard.writeText(text).then(() => {
+        alert("Lien copié !");
+      }, err => {
+        console.error('Erreur de copie :', err);
+      });
+    }
+  </script>
+</body>
+</html>

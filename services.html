@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Nos Services - taka Tech</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      background-size: 300% 300%;
+      animation: gradientBG 15s ease infinite;
+      color: #fff;
+      padding: 20px;
+    }
+
+    @keyframes gradientBG {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(0, 198, 255, 0.08);
+      padding: 15px 30px;
+      border-radius: 15px;
+      box-shadow: 0 0 10px rgba(0,198,255,0.2);
+      margin-bottom: 30px;
+      backdrop-filter: blur(10px);
+    }
+
+    nav h2 {
+      color: #00eaff;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    nav ul li a:hover {
+      color: #00eaff;
+    }
+
+    .main-title {
+      text-align: center;
+      font-size: 38px;
+      color: #00eaff;
+      margin-bottom: 40px;
+      text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+    }
+
+    .service-card {
+      padding: 25px;
+      border-radius: 20px;
+      background: rgba(255, 255, 255, 0.05);
+      box-shadow: 0 0 20px rgba(0, 198, 255, 0.1);
+      transition: all 0.3s ease;
+      text-align: center;
+    }
+
+    .service-card:hover {
+      background: rgba(255, 255, 255, 0.08);
+      transform: translateY(-5px);
+    }
+
+    .service-card h3 {
+      font-size: 22px;
+      color: #00c6ff;
+      margin-bottom: 15px;
+    }
+
+    .service-card p {
+      color: #ccc;
+      font-size: 16px;
+    }
+
+    .footer {
+      margin-top: 50px;
+      text-align: center;
+      font-size: 14px;
+      color: #aaa;
+    }
+
+    @media (max-width: 768px) {
+      nav ul {
+        flex-direction: column;
+        gap: 10px;
+        align-items: flex-start;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <h2>taka Tech</h2>
+    <ul>
+      <li><a href="index.html">Accueil</a></li>
+      <li><a href="services.html">Nos Services</a></li>
+      <li><a href="https://t.me/techtaka" target="_blank">Telegram</a></li>
+      <li><a href="https://whatsapp.com/channel/0029Vark1I1AYlUR1G8YMX31" target="_blank">WhatsApp</a></li>
+    </ul>
+  </nav>
+
+  <h1 class="main-title">Nos Services</h1>
+
+  <div class="services-grid">
+    <div class="service-card">
+      <h3>Création de Bots</h3>
+      <p>Développement de bots personnalisés pour WhatsApp, Telegram, Discord, etc.</p>
+    </div>
+    <div class="service-card">
+      <h3>Hacking Éthique</h3>
+      <p>Formations en sécurité informatique, tests de pénétration et analyse de vulnérabilités.</p>
+    </div>
+    <div class="service-card">
+      <h3>Déploiement Web</h3>
+      <p>Hébergement, configuration de domaines, optimisation et monitoring de sites web.</p>
+    </div>
+    <div class="service-card">
+      <h3>Panels d'Automatisation</h3>
+      <p>Accès à des panels puissants pour la gestion d'automatisations en masse.</p>
+    </div>
+    <div class="service-card">
+      <h3>Partage de Scripts</h3>
+      <p>Scripts fonctionnels prêts à l’emploi pour bots, panels ou sécurité réseau.</p>
+    </div>
+    <div class="service-card">
+      <h3>Tutoriels Vidéo et PDF</h3>
+      <p>Tutos complets et détaillés, sous forme de vidéos, ebooks ou PDF pratiques.</p>
+    </div>
+  </div>
+
+  <div class="footer">
+    Développé avec passion par <strong>taka</strong> | © Tous droits réservés
+  </div>
+
+</body>
+</html>

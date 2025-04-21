@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>taka HOME - Dark Hack Zone</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    * {
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background-color: #0e0e14;
+      color: #f1f1f1;
+      overflow-x: hidden;
+    }
+
+    nav {
+      background-color: #0a0a12;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 30px;
+      border-bottom: 1px solid #00ffc3;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .logo {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 22px;
+      color: #00ffc3;
+      text-shadow: 0 0 8px #00ffc3;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 25px;
+    }
+
+    .nav-links a {
+      color: #f1f1f1;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: #00ffc3;
+    }
+
+    .menu-toggle {
+      display: none;
+      font-size: 24px;
+      color: #00ffc3;
+      cursor: pointer;
+    }
+
+    @media (max-width: 768px) {
+      .nav-links {
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        flex-direction: column;
+        background-color: #0a0a12;
+        display: none;
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+    }
+
+    header {
+      text-align: center;
+      padding: 80px 20px 40px;
+      background: radial-gradient(circle, #0f0f23 0%, #000000 100%);
+      border-bottom: 2px solid #00ffc3;
+      box-shadow: 0 0 25px rgba(0,255,200,0.1);
+      animation: fadeInDown 1.5s ease-out;
+    }
+
+    header h1 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 48px;
+      color: #00ffc3;
+      text-shadow: 0 0 10px #00ffc3, 0 0 20px #00ffc3;
+      margin: 0;
+      animation: glow 3s infinite ease-in-out;
+    }
+
+    .subtitle {
+      font-size: 18px;
+      color: #ccc;
+      margin-top: 15px;
+      font-weight: 400;
+      animation: fadeIn 2s ease-out;
+    }
+
+    .main-content {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+      padding: 60px 40px;
+      max-width: 1100px;
+      margin: auto;
+      animation: fadeInUp 1.5s ease-out;
+    }
+
+    .section {
+      background: linear-gradient(145deg, #1a1a24, #101018);
+      border: 1.5px solid #00ffc3;
+      border-radius: 16px;
+      padding: 25px 20px;
+      box-shadow: 0 0 20px rgba(0,255,200,0.08);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .section:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0 30px rgba(0,255,200,0.3);
+    }
+
+    .section h2 {
+      color: #00ffc3;
+      font-size: 20px;
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .section p {
+      font-size: 15px;
+      color: #bbb;
+      flex-grow: 1;
+      text-align: justify;
+    }
+
+    .btn {
+      align-self: flex-start;
+      margin-top: 20px;
+      padding: 10px 20px;
+      background-color: transparent;
+      border: 2px solid #00ffc3;
+      color: #00ffc3;
+      font-weight: bold;
+      border-radius: 6px;
+      text-decoration: none;
+      transition: 0.3s ease;
+    }
+
+    .btn:hover {
+      background-color: #00ffc3;
+      color: #000;
+      transform: scale(1.05);
+    }
+
+    footer {
+      text-align: center;
+      padding: 40px 20px;
+      font-size: 14px;
+      color: #666;
+      border-top: 1px solid rgba(0,255,200,0.1);
+      margin-top: 60px;
+      animation: fadeInUp 1.5s ease-out;
+    }
+
+    @keyframes fadeInDown {
+      from {
+        opacity: 0;
+        transform: translateY(-40px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes glow {
+      0%, 100% {
+        text-shadow: 0 0 10px #00ffc3, 0 0 20px #00ffc3;
+      }
+      50% {
+        text-shadow: 0 0 20px #00fff7, 0 0 30px #00fff7;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="logo">taka TECH</div>
+    <div class="menu-toggle" onclick="document.querySelector('.nav-links').classList.toggle('active')">
+      <i class="fas fa-bars"></i>
+    </div>
+    <div class="nav-links">
+      <a href="home.html#">Accueil</a>
+      <a href="creer_bot.html">Bots</a>
+      <a href="téléchargement_fichiers.html">Fichiers</a>
+      <a href="commander_panels.html">Panels</a>
+      <a href="cours_hacking.html">Hacking</a>
+      <a href="https://taka-home.onrender.com/tutoriels.html">Tutos</a>
+    </div>
+  </nav>
+
+  <header>
+    <h1>taka HOME</h1>
+    <p class="subtitle">Portail Cyber & Bots | Scripts, Panels, Hacking & Tutos</p>
+  </header>
+
+  <div class="main-content">
+    <div class="section">
+      <h2><i class="fa-solid fa-robot"></i>Créer un Bot</h2>
+      <p>Conçois ton propre bot WhatsApp, Telegram ou Discord avec des tutoriels structurés, du code prêt à l’emploi, et une aide complète pour le déploiement.</p>
+      <a href="creer_bot.html" class="btn">Voir les cours</a>
+    </div>
+
+    <div class="section">
+      <h2><i class="fa-solid fa-download"></i>Téléchargement</h2>
+      <p>Accède à une sélection de fichiers utiles : outils open source, ressources éducatives, ebooks, utilitaires pour développeurs, et bien plus encore.</p>
+      <a href="téléchargement_fichiers.html" class="btn">Télécharger</a>
+    </div>
+
+    <div class="section">
+      <h2><i class="fa-solid fa-server"></i>Commander un Panel</h2>
+      <p>Demande ton panel sur-mesure : gestion de bots, APIs, utilisateurs, stats, logs, sécurité avancée. Création rapide et optimisée.</p>
+      <a href="commander_panels.html" class="btn">Commander</a>
+    </div>
+
+    <div class="section">
+      <h2><i class="fa-solid fa-user-secret"></i>Hacking Éthique</h2>
+      <p>Découvre les fondamentaux du test d'intrusion légal (pentesting) : apprentissage de la reconnaissance réseau, identification de vulnérabilités, audits de sécurité, et création de scripts dans un cadre autorisé et éducatif.</p>
+      <a href="cours_hacking.html" class="btn">Commencer</a>
+    </div>
+
+    <div class="section">
+      <h2><i class="fa-solid fa-code"></i>Tutoriels Gratuits</h2>
+      <p>Tutos clairs et concis pour débutants. Apprends à coder, automatiser, sécuriser ou utiliser des outils avec des exemples concrets.</p>
+      <a href="https://whatsapp.com/channel/0029Vark1I1AYlUR1G8YMX31" class="btn">Découvrir</a>
+    </div>
+  </div>
+
+  <footer>
+    Site développé par Taka Tech | Tous droits réservés<br>
+    <small>
+      Tout le contenu proposé sur ce site est à but éducatif et respecte les lois en vigueur. Aucune activité illégale n'est tolérée.<br>
+      <a href="politique_confidentialite.html" style="color:#00ffc3;">Politique de confidentialité</a> |
+      <a href="contact.html" style="color:#00ffc3;">Contact</a>
+    </small>
+  </footer>
+
+</body>
+</html>
